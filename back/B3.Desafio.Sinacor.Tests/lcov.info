@@ -4,29 +4,28 @@ FNDA:15,System.Decimal B3.Desafio.Sinacor.Services.Calculator::CalculateCDI(Syst
 DA:18,15
 DA:19,15
 DA:20,15
-FN:21,System.Decimal B3.Desafio.Sinacor.Services.Calculator::CalculateCdiTax(System.Decimal,System.Decimal,System.Int32)
+FN:22,System.Decimal B3.Desafio.Sinacor.Services.Calculator::CalculateCdiTax(System.Decimal,System.Decimal,System.Int32)
 FNDA:14,System.Decimal B3.Desafio.Sinacor.Services.Calculator::CalculateCdiTax(System.Decimal,System.Decimal,System.Int32)
-DA:22,14
-DA:23,22
-DA:24,10
-DA:25,3
-DA:26,1
-DA:27,14
-BRDA:23,10,0,8
-BRDA:23,10,1,6
-BRDA:24,49,0,4
-BRDA:24,49,1,2
-BRDA:25,88,0,1
-BRDA:25,88,1,1
-FN:28,System.Collections.Generic.IEnumerable`1<B3.Desafio.Sinacor.Controllers.Response.Incomes> B3.Desafio.Sinacor.Services.Calculator::CalculateCDIByMonth(System.Decimal,System.UInt32)
+DA:23,14
+DA:24,22
+DA:25,10
+DA:26,3
+DA:27,1
+DA:28,14
+BRDA:24,10,0,8
+BRDA:24,10,1,6
+BRDA:25,53,0,4
+BRDA:25,53,1,2
+BRDA:26,96,0,1
+BRDA:26,96,1,1
+FN:29,System.Collections.Generic.IEnumerable`1<B3.Desafio.Sinacor.Controllers.Response.Incomes> B3.Desafio.Sinacor.Services.Calculator::CalculateCDIByMonth(System.Decimal,System.UInt32)
 FNDA:2,System.Collections.Generic.IEnumerable`1<B3.Desafio.Sinacor.Controllers.Response.Incomes> B3.Desafio.Sinacor.Services.Calculator::CalculateCDIByMonth(System.Decimal,System.UInt32)
-DA:29,2
-DA:30,3
-DA:32,1
-DA:33,22
-DA:34,10
+DA:30,2
+DA:31,3
+DA:33,1
+DA:34,22
 DA:35,10
-DA:36,1
+DA:36,10
 DA:37,1
 DA:38,1
 DA:39,1
@@ -38,7 +37,7 @@ DA:44,1
 DA:45,1
 DA:46,1
 DA:47,1
-DA:49,9
+DA:48,1
 DA:50,9
 DA:51,9
 DA:52,9
@@ -50,15 +49,16 @@ DA:57,9
 DA:58,9
 DA:59,9
 DA:60,9
-DA:61,10
-DA:63,1
+DA:61,9
+DA:62,10
 DA:64,1
-BRDA:30,14,0,1
-BRDA:30,14,1,1
-BRDA:33,304,1,10
-BRDA:35,48,0,1
-BRDA:35,48,1,9
-BRDA:33,304,0,1
+DA:65,1
+BRDA:31,14,0,1
+BRDA:31,14,1,1
+BRDA:34,304,1,10
+BRDA:36,48,0,1
+BRDA:36,48,1,9
+BRDA:34,304,0,1
 LF:42
 LH:42
 BRF:12

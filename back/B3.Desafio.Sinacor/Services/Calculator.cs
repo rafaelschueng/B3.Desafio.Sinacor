@@ -18,12 +18,13 @@ namespace B3.Desafio.Sinacor.Services
         {
             return (decimal)((double)value * (1 + (CDI * TB)));
         }
+
         public static decimal CalculateCdiTax(decimal income, decimal value, int month)
         {
-            if (month <= 6) return (decimal)((float)(income - value) * HalfYear);
-            if (month <= 12) return (decimal)((float)(income - value) * Year);
-            if (month <= 24) return (decimal)((float)(income - value) * TwoYear);
-            return (decimal)((float)(income - value) * MoreThanTwoYears);
+            if (month <= 6) return (decimal)((double)(income - value) * HalfYear);
+            if (month <= 12) return (decimal)((double)(income - value) * Year);
+            if (month <= 24) return (decimal)((double)(income - value) * TwoYear);
+            return (decimal)((double)(income - value) * MoreThanTwoYears);
         }
         public static IEnumerable<Incomes> CalculateCDIByMonth(decimal value, UInt32 months)
         {
