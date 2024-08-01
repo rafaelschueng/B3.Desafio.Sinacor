@@ -7,9 +7,27 @@ h3 {
     text-align: center;
 }
 
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+}
+
+form > div {
+    align-content: center;
+    width: 100%;
+}
+
 main {
-    width: 50dvw;
+    width: 60dvw;
     height: 100dvh;
     align-content: center;
     margin: 0 auto;
+}
+
+table {
+    margin-top: 1rem;
 }

@@ -1,12 +1,16 @@
 <div>
+    <h1>📈</h1>
     <h3>Desafio Sinacor - Calculadora de CDI - B3</h3>
     <form>
-        <label for="value">Valor a ser depositado:</label>
-        <input type="number" [formControl]="value" id="value" required>
-        <label for="month">Quantidade de Meses:</label>
-        <input type="number" [formControl]="months" id="months" required>
+        <div>
+            <label for="value">Valor a ser depositado:</label>
+            <input type="number" [formControl]="value" id="value" required>
+        </div>
+        <div>
+            <label for="month">Quantidade de Meses:</label>
+            <input type="number" [formControl]="months" id="months" required>
+        </div>
     </form>
-    <br>
     <button (click)="submit()">Calcular</button>
     @if (showErrorModal) {
     <dialog open>
@@ -20,5 +24,29 @@
             </footer>
         </article>
     </dialog>
+    }
+    @if(CdiTableResponse != null) {
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Valor Inicial</th>
+                <th scope="col">Rendimento</th>
+                <th scope="col">Valor Líquido</th>
+                <th scope="col">Imposto(I.R)</th>
+                <th scope="col">Mês</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of CdiTableResponse.incomes; track $index) {
+            <tr>
+                <th scope="row">{{ CdiTableResponse.initialValue }}</th>
+                <td>{{ item.income }}</td>
+                <td>{{ item.netValue }}</td>
+                <td>{{ item.tax }}</td>
+                <td>{{ item.month }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
     }
 </div>

@@ -23,7 +23,7 @@ namespace B3.Desafio.Sinacor.Services
             if (month <= 6) return (decimal)((float)(income - value) * HalfYear);
             if (month <= 12) return (decimal)((float)(income - value) * Year);
             if (month <= 24) return (decimal)((float)(income - value) * TwoYear);
-            return (decimal)((float)value * MoreThanTwoYears);
+            return (decimal)((float)(income - value) * MoreThanTwoYears);
         }
         public static IEnumerable<Incomes> CalculateCDIByMonth(decimal value, UInt32 months)
         {
