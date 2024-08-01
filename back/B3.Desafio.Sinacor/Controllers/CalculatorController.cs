@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using B3.Desafio.Sinacor.Services;
 using B3.Desafio.Sinacor.Controllers.Response;
+using System.Diagnostics.CodeAnalysis;
 
 namespace B3.Desafio.Sinacor.Controllers;
 
 [ApiController]
 [Route("calculator")]
+[ExcludeFromCodeCoverage]
 public class CalculatorController : ControllerBase
 {
 

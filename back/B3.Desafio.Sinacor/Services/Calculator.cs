@@ -6,7 +6,7 @@ namespace B3.Desafio.Sinacor.Services
     {
         // constants to calculate incomes
         private const float TB = 1.08f;
-        private const float CDI = 0.9f;
+        private const float CDI = 0.09f;
 
         // constants to calculate taxes
         private const float HalfYear = 0.225f;
@@ -16,14 +16,13 @@ namespace B3.Desafio.Sinacor.Services
 
         public static decimal CalculateCDI(decimal value)
         {
-            return (decimal)((double)value + (1 + CDI * TB));
+            return (decimal)((double)value * (1 + (CDI * TB)));
         }
-        public static decimal CalculateCdiTax(decimal value, int month)
+        public static decimal CalculateCdiTax(decimal income, decimal value, int month)
         {
-
-            if (month <= 6) return (decimal)((float)value * HalfYear);
-            if (month <= 12) return (decimal)((float)value * Year);
-            if (month <= 24) return (decimal)((float)value * TwoYear);
+            if (month <= 6) return (decimal)((float)(income - value) * HalfYear);
+            if (month <= 12) return (decimal)((float)(income - value) * Year);
+            if (month <= 24) return (decimal)((float)(income - value) * TwoYear);
             return (decimal)((float)value * MoreThanTwoYears);
         }
         public static IEnumerable<Incomes> CalculateCDIByMonth(decimal value, UInt32 months)
@@ -36,7 +35,7 @@ namespace B3.Desafio.Sinacor.Services
                 if (i < 1)
                 {
                     decimal income = CalculateCDI(value);
-                    decimal tax = CalculateCdiTax(income - value, i);
+                    decimal tax = CalculateCdiTax(income, value, i);
                     decimal netValue = income - tax;
                     CalculatedIncomes.Add(new Incomes()
                     {
@@ -49,13 +48,13 @@ namespace B3.Desafio.Sinacor.Services
                 else
                 {
                     decimal income = CalculateCDI(CalculatedIncomes[i - 1].Income);
-                    decimal tax = CalculateCdiTax(income - value, i);
+                    decimal tax = CalculateCdiTax(income, value, i);
                     decimal netValue = income - tax;
                     CalculatedIncomes.Add(new Incomes()
                     {
                         Month = DateOnly.FromDateTime(DateTime.Now).AddMonths(i).ToString("dd/MM/yyyy"),
                         Income = income,
-                        Tax = CalculateCdiTax(income - value, i),
+                        Tax = tax,
                         NetValue = netValue
                     });
                 }
