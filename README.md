@@ -11,4 +11,4 @@ Para rodar o teste de cobertura:
 `dotnet test ./back/B3.Desafio.Sinacor.Tests/  /p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=lcov.info`
 
 Para rodar o front-end:
-`cd ./front/sinacor-front-app/; npm run start`
+`cd ./front/sinacor-front-app/; npm install; npm run start`
